@@ -16,7 +16,11 @@ def save_expenses(expenses):
 
 def add_expense(expenses):
     
-    amount = float(input("Enter amount: "))
+    try:
+        amount = float(input("Enter amount: "))
+    except ValueError:
+        print("Please enter a valid number.")
+        return
     category = input("Enter category: ")
     note = input("Enter note: ")
 
