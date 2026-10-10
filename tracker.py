@@ -69,6 +69,25 @@ def delete_expense(expenses):
     save_expenses(expenses)
     print("Deleted.")
 
+def show_totals(expenses):
+    
+    if not expenses:
+        print("No expenses yet.")
+        return
+
+    totals = {}
+
+    for expense in expenses:
+        category = expense["category"]
+        amount = expense["amount"]
+        totals[category] = totals.get(category, 0) + amount
+
+    for category, total in totals.items():
+        print(f"{category}: {total}")
+
+    overall_total = sum(totals.values())
+    print(f"Total: {overall_total}")
+
 def main():
     expenses = load_expenses()
 
@@ -76,7 +95,8 @@ def main():
         print("\n1. Add expense")
         print("2. View all expenses")
         print("3. Delete an expense")
-        print("4. Quit")
+        print("4. Show totals by category")
+        print("5. Quit")
 
         choice = input("Choose an option: ")
 
@@ -87,6 +107,8 @@ def main():
         elif choice == "3":
             delete_expense(expenses)
         elif choice == "4":
+            show_totals(expenses)
+        elif choice == "5":
             print("Goodbye!")
             break
         else:

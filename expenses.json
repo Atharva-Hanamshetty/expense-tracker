@@ -22,11 +22,5 @@
         "category": "food",
         "note": "groceries",
         "date": "2026-10-11"
-    },
-    {
-        "amount": 550.0,
-        "category": "gaming",
-        "note": "game",
-        "date": "2026-10-11"
     }
 ]
