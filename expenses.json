@@ -4,5 +4,11 @@
         "category": "food",
         "note": "dinner",
         "date": "2026-10-11"
+    },
+    {
+        "amount": 300.0,
+        "category": "clothing",
+        "note": "bata",
+        "date": "2026-10-11"
     }
 ]
