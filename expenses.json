@@ -10,5 +10,23 @@
         "category": "clothing",
         "note": "bata",
         "date": "2026-10-11"
+    },
+    {
+        "amount": 500.0,
+        "category": "electronics",
+        "note": "sim",
+        "date": "2026-10-11"
+    },
+    {
+        "amount": 750.0,
+        "category": "food",
+        "note": "groceries",
+        "date": "2026-10-11"
+    },
+    {
+        "amount": 550.0,
+        "category": "gaming",
+        "note": "game",
+        "date": "2026-10-11"
     }
 ]

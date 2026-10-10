@@ -31,6 +31,35 @@ def add_expense(expenses):
 
     save_expenses(expenses)
 
-expenses = load_expenses()
-add_expense(expenses)
-print(expenses)
+def view_expenses(expenses):
+    
+    if not expenses:
+        print("No expenses yet.")
+        return
+
+    for i, expense in enumerate(expenses, start=1):
+        print(
+            f"{i}. {expense['date']} | {expense['category']} | {expense['amount']} | {expense['note']}"
+        )
+
+def main():
+    expenses = load_expenses()
+
+    while True:
+        print("\n1. Add expense")
+        print("2. View all expenses")
+        print("3. Quit")
+
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            add_expense(expenses)
+        elif choice == "2":
+            view_expenses(expenses)
+        elif choice == "3":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice, try again.")
+
+main()
