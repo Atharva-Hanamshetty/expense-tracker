@@ -46,13 +46,37 @@ def view_expenses(expenses):
             f"{i}. {expense['date']} | {expense['category']} | {expense['amount']} | {expense['note']}"
         )
 
+def delete_expense(expenses):
+    
+    if not expenses:
+        print("No expenses to delete.")
+        return
+
+    view_expenses(expenses)
+
+    try:
+        number = int(input("Enter expense number to delete: "))
+    except ValueError:
+        print("Invalid number.")
+        return
+
+    if number < 1 or number > len(expenses):
+        print("Invalid number.")
+        return
+
+    expenses.pop(number - 1)
+
+    save_expenses(expenses)
+    print("Deleted.")
+
 def main():
     expenses = load_expenses()
 
     while True:
         print("\n1. Add expense")
         print("2. View all expenses")
-        print("3. Quit")
+        print("3. Delete an expense")
+        print("4. Quit")
 
         choice = input("Choose an option: ")
 
@@ -61,6 +85,8 @@ def main():
         elif choice == "2":
             view_expenses(expenses)
         elif choice == "3":
+            delete_expense(expenses)
+        elif choice == "4":
             print("Goodbye!")
             break
         else:
